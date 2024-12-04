@@ -1,0 +1,10 @@
+{
+  "editor.rulers": [100],
+  "dart.lineLength": 100,
+  "autoSnippet.snippets": [
+    {
+      "pattern": "**/*.dart",
+      "snippet": "header"
+    }
+  ]
+}
