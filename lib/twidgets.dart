@@ -4,4 +4,4 @@
 
 library twidgets;
 
-export 'widgets/button.dart';
+export 'widgets/tbutton.dart';
