@@ -1,6 +1,6 @@
 {
-  "editor.rulers": [100],
-  "dart.lineLength": 100,
+  "editor.rulers": [120],
+  "dart.lineLength": 120,
   "autoSnippet.snippets": [
     {
       "pattern": "**/*.dart",
