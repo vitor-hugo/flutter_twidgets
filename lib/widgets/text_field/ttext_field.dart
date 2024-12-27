@@ -90,7 +90,7 @@ class TTextField extends StatefulWidget {
   final bool enableSuggestions;
   final int? maxLength;
   final VoidCallback? onEditingComplete;
-  final VoidCallback? onChanged;
+  final void Function(dynamic)? onChanged;
   final Function(PointerDownEvent)? onTapOutside;
   final double cursorWidth;
   final double? cursorHeight;
@@ -134,7 +134,7 @@ class TTextField extends StatefulWidget {
     properties.add(DiagnosticsProperty<bool>('enableSuggestions', enableSuggestions, defaultValue: false));
     properties.add(DiagnosticsProperty<int>('maxLength', maxLength, defaultValue: null));
     properties.add(DiagnosticsProperty<VoidCallback>('onEditingComplete', onEditingComplete, defaultValue: null));
-    properties.add(DiagnosticsProperty<VoidCallback>('onChanged', onChanged, defaultValue: null));
+    properties.add(DiagnosticsProperty<void Function(dynamic)>('onChanged', onChanged, defaultValue: null));
     properties.add(DiagnosticsProperty<double>('cursorWidth', cursorWidth, defaultValue: 2.0));
     properties.add(DiagnosticsProperty<double>('cursorHeight', cursorHeight, defaultValue: null));
     properties.add(DiagnosticsProperty<Radius>('cursorRadius', cursorRadius, defaultValue: const Radius.circular(2.0)));
@@ -324,13 +324,13 @@ class _TTextFieldState extends State<TTextField> {
           placeholder: widget.placeholder,
           maxLines: 1,
           padding: const EdgeInsets.all(0),
-          onChanged: (_) {
+          onChanged: (value) {
             if (widget.clearErrorOnChange) {
               _showError = false;
             }
             setState(() {});
             if (widget.onChanged != null) {
-              widget.onChanged!();
+              widget.onChanged!(value);
             }
           },
           onTapOutside: (pointer) {
