@@ -1,6 +1,6 @@
 name: twidgets
 description: "A package with basic interface elements highly customizable."
-version: 0.0.1
+version: 0.0.2
 homepage: www.torugo.com.br
 
 environment:
