@@ -247,7 +247,7 @@ class TButton extends StatelessWidget {
                 focusNode: focusNode,
                 canRequestFocus: (disabled || loading) ? false : canRequestFocus,
                 autofocus: autofocus,
-                focusColor: _resolveForegroundColor(colorScheme).withOpacity(0.13),
+                focusColor: _resolveForegroundColor(colorScheme).withValues(alpha: 0.13),
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
@@ -333,7 +333,7 @@ class TButton extends StatelessWidget {
     if (_type != TButtonType.outlined) return Colors.transparent;
 
     if (disabled) {
-      return disabledBorderColor ?? colorScheme.outlineVariant.withOpacity(0.5);
+      return disabledBorderColor ?? colorScheme.outlineVariant.withValues(alpha: 0.5);
     }
     return borderColor ?? colorScheme.outline;
   }
@@ -344,11 +344,11 @@ class TButton extends StatelessWidget {
   }
 
   Color _resolveSplashColor(ColorScheme colorScheme) {
-    return splashColor ?? _resolveForegroundColor(colorScheme).withOpacity(0.1);
+    return splashColor ?? _resolveForegroundColor(colorScheme).withValues(alpha: 0.1);
   }
 
   Color _resolveHighlightColor(ColorScheme colorScheme) {
-    return highlightColor ?? _resolveForegroundColor(colorScheme).withOpacity(0.1);
+    return highlightColor ?? _resolveForegroundColor(colorScheme).withValues(alpha: 0.1);
   }
 
   Color _resolveBackgroundColor(ColorScheme colorScheme) {
@@ -367,7 +367,6 @@ class TButton extends StatelessWidget {
         return backgroundColor ?? colorScheme.surfaceContainer;
 
       case TButtonType.filled:
-      default:
         return backgroundColor ?? colorScheme.primary;
     }
   }
@@ -380,14 +379,13 @@ class TButton extends StatelessWidget {
       case TButtonType.tonal:
       case TButtonType.elevated:
       case TButtonType.filled:
-      default:
         return disabledBackgroundColor ?? colorScheme.surfaceContainerLow;
     }
   }
 
   Color _resolveForegroundColor(ColorScheme colorScheme) {
     if (disabled) {
-      return disabledForegroundColor ?? colorScheme.onSurface.withOpacity(0.4);
+      return disabledForegroundColor ?? colorScheme.onSurface.withValues(alpha: 0.4);
     }
 
     switch (_type) {
@@ -399,16 +397,15 @@ class TButton extends StatelessWidget {
         return foregroundColor ?? colorScheme.onSecondaryContainer;
 
       case TButtonType.filled:
-      default:
         return foregroundColor ?? colorScheme.onPrimary;
     }
   }
 
   Color _resolveIconColor(ColorScheme colorScheme) {
     if (disabled) {
-      return disabledIconColor ?? _resolveForegroundColor(colorScheme).withOpacity(0.14);
+      return disabledIconColor ?? _resolveForegroundColor(colorScheme).withValues(alpha: 0.14);
     }
-    return iconColor ?? _resolveForegroundColor(colorScheme).withOpacity(0.5);
+    return iconColor ?? _resolveForegroundColor(colorScheme).withValues(alpha: 0.5);
   }
 
   TextDirection _resolveIconAlighment() {
