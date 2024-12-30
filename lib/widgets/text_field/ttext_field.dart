@@ -467,6 +467,9 @@ class _TTextFieldState extends State<TTextField> {
       onTap: () {
         _effectiveController.clear();
         setState(() {});
+        if (widget.onClear != null) {
+          widget.onClear!();
+        }
       },
       icon: Icons.close,
       color: disabled ? _colorScheme.onSurfaceVariant.withValues(alpha: 0.5) : _colorScheme.onSurface,
