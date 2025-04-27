@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:twidgets/icons/eye_icons.dart';
 import 'package:twidgets/widgets/text_field/ttext_field_action.dart';
 import 'package:twidgets/widgets/text_field/ttext_field_colors.dart';
@@ -57,6 +58,7 @@ class TTextField extends StatefulWidget {
     this.cursorRadius = const Radius.circular(2.0),
     this.cursorOpacityAnimates = true,
     this.cursorColor,
+    this.inputFormatters,
   });
 
   final TextEditingController? controller;
@@ -97,6 +99,7 @@ class TTextField extends StatefulWidget {
   final Radius cursorRadius;
   final bool cursorOpacityAnimates;
   final Color? cursorColor;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<TTextField> createState() => _TTextFieldState();
@@ -140,6 +143,8 @@ class TTextField extends StatefulWidget {
     properties.add(DiagnosticsProperty<Radius>('cursorRadius', cursorRadius, defaultValue: const Radius.circular(2.0)));
     properties.add(DiagnosticsProperty<bool>('cursorOpacityAnimates', cursorOpacityAnimates, defaultValue: true));
     properties.add(DiagnosticsProperty<Color>('cursorColor', cursorColor, defaultValue: null));
+    properties
+        .add(DiagnosticsProperty<List<TextInputFormatter>>('inputFormatters', inputFormatters, defaultValue: null));
 
     super.debugFillProperties(properties);
   }
@@ -377,6 +382,7 @@ class _TTextFieldState extends State<TTextField> {
           cursorRadius: widget.cursorRadius,
           cursorOpacityAnimates: widget.cursorOpacityAnimates,
           cursorColor: widget.cursorColor,
+          inputFormatters: const [],
         ),
       ),
     );
