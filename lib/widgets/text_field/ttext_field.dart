@@ -382,7 +382,7 @@ class _TTextFieldState extends State<TTextField> {
           cursorRadius: widget.cursorRadius,
           cursorOpacityAnimates: widget.cursorOpacityAnimates,
           cursorColor: widget.cursorColor,
-          inputFormatters: const [],
+          inputFormatters: widget.inputFormatters,
         ),
       ),
     );
