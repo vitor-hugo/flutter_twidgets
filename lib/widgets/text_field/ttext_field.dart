@@ -362,6 +362,7 @@ class _TTextFieldState extends State<TTextField> {
             color: Colors.transparent,
             border: null,
           ),
+          textAlign: widget.style.textAlign,
           undoController: widget.undoController,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
