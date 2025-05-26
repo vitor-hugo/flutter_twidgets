@@ -271,7 +271,8 @@ class TButton extends StatelessWidget {
                                   size: iconSize,
                                   color: _resolveIconColor(colorScheme),
                                 ),
-                              if (icon != null) const SizedBox(width: 8),
+
+                              if (icon != null && label.isNotEmpty) const SizedBox(width: 8),
 
                               // Label
                               Text(
