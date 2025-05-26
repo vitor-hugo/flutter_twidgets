@@ -42,6 +42,7 @@ class TButton extends StatelessWidget {
     this.iconColor,
     this.splashColor,
     this.highlightColor,
+    this.hoverColor,
     this.disabledBackgroundColor,
     this.disabledForegroundColor,
     this.disabledIconColor,
@@ -78,6 +79,7 @@ class TButton extends StatelessWidget {
     this.iconColor,
     this.splashColor,
     this.highlightColor,
+    this.hoverColor,
     this.disabledBackgroundColor,
     this.disabledForegroundColor,
     this.disabledIconColor,
@@ -113,6 +115,7 @@ class TButton extends StatelessWidget {
     this.iconColor,
     this.splashColor,
     this.highlightColor,
+    this.hoverColor,
     this.borderColor,
     this.disabledForegroundColor,
     this.disabledIconColor,
@@ -150,6 +153,7 @@ class TButton extends StatelessWidget {
     this.iconColor,
     this.splashColor,
     this.highlightColor,
+    this.hoverColor,
     this.disabledBackgroundColor,
     this.disabledForegroundColor,
     this.disabledIconColor,
@@ -188,6 +192,7 @@ class TButton extends StatelessWidget {
   final Color? borderColor;
   final Color? splashColor;
   final Color? highlightColor;
+  final Color? hoverColor;
 
   final Color? disabledBackgroundColor;
   final Color? disabledForegroundColor;
@@ -248,6 +253,7 @@ class TButton extends StatelessWidget {
                 canRequestFocus: (disabled || loading) ? false : canRequestFocus,
                 autofocus: autofocus,
                 focusColor: _resolveForegroundColor(colorScheme).withValues(alpha: 0.13),
+                hoverColor: hoverColor,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
