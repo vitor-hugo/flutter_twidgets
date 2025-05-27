@@ -49,6 +49,7 @@ class TButton extends StatelessWidget {
     this.focusNode,
     this.canRequestFocus = true,
     this.autofocus = false,
+    this.mouseCursor,
   })  : _type = TButtonType.filled,
         borderThickness = 0,
         borderColor = Colors.transparent,
@@ -86,6 +87,7 @@ class TButton extends StatelessWidget {
     this.focusNode,
     this.canRequestFocus = true,
     this.autofocus = false,
+    this.mouseCursor,
   })  : _type = TButtonType.tonal,
         borderThickness = 0,
         borderColor = Colors.transparent,
@@ -123,6 +125,7 @@ class TButton extends StatelessWidget {
     this.focusNode,
     this.canRequestFocus = true,
     this.autofocus = false,
+    this.mouseCursor,
   })  : _type = TButtonType.outlined,
         backgroundColor = Colors.transparent,
         disabledBackgroundColor = Colors.transparent,
@@ -160,6 +163,7 @@ class TButton extends StatelessWidget {
     this.focusNode,
     this.canRequestFocus = true,
     this.autofocus = false,
+    this.mouseCursor,
   })  : _type = TButtonType.elevated,
         borderThickness = 0,
         borderColor = Colors.transparent,
@@ -206,6 +210,7 @@ class TButton extends StatelessWidget {
   final FocusNode? focusNode;
   final bool canRequestFocus;
   final bool autofocus;
+  final MouseCursor? mouseCursor;
 
   @override
   Widget build(BuildContext context) {
@@ -254,6 +259,7 @@ class TButton extends StatelessWidget {
                 autofocus: autofocus,
                 focusColor: _resolveForegroundColor(colorScheme).withValues(alpha: 0.13),
                 hoverColor: hoverColor,
+                mouseCursor: mouseCursor,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
